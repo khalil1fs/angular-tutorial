@@ -38,7 +38,7 @@ import {Title} from "@angular/platform-browser";
 })
 export class PopupComponent {
   constructor(private title: Title) {
-    title.setTitle('Pop-up');
+    title.setTitle('Pop up');
   }
 
   @HostBinding('@state')

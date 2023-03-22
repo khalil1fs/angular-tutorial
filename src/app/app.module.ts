@@ -16,6 +16,8 @@ import { PopupComponent } from './popup/popup.component';
 import {PopupService} from "./popup/popup.service";
 import { ShowPopupComponent } from './popup/show-popup.component';
 import { InfoComponent } from './info/info.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,13 @@ import { InfoComponent } from './info/info.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [PopupService],
   bootstrap: [AppComponent]
