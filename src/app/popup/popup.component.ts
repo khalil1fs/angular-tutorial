@@ -1,5 +1,6 @@
 import { Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'my-popup',
@@ -36,6 +37,10 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   `]
 })
 export class PopupComponent {
+  constructor(private title: Title) {
+    title.setTitle('Pop-up');
+  }
+
   @HostBinding('@state')
   state: 'opened' | 'closed' = 'closed';
 

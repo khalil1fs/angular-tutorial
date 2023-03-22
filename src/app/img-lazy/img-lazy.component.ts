@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {asapScheduler, filter, from, fromEvent, map, Observable, of, scan, take} from "rxjs";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-img-lazy',
@@ -19,8 +20,9 @@ export class ImgLazyComponent implements OnInit {
     scan((acc, val) => acc + val),
     filter(v => v > 10),
     take(3));
-  constructor() { }
-
+  constructor(private title: Title) {
+    title.setTitle('Lazy image');
+  }
   ngOnInit(): void {
     this.result.subscribe(e=>console.log(e));
     // this.cold.subscribe((e: any)=>console.log(e))

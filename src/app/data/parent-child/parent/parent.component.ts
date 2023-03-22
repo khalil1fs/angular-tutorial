@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-parent',
@@ -10,7 +11,8 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
   currentItem = 'Television';
-  constructor() { }
-
+  constructor(private title: Title) {
+    title.setTitle('data Parent -> Child');
+  }
 
 }

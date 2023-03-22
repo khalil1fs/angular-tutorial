@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-info',
@@ -6,7 +7,8 @@ import {Component} from '@angular/core';
 })
 export class InfoComponent  {
 
-  constructor() {
+  constructor(private title: Title) {
+    title.setTitle('Info');
   }
 
 }
