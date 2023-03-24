@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, VERSION, ApplicationRef} from '@angular/core';
 import {Title} from "@angular/platform-browser";
 
 @Component({
@@ -6,6 +6,10 @@ import {Title} from "@angular/platform-browser";
   templateUrl: './info.component.html',
 })
 export class InfoComponent  {
+  major = VERSION.major;
+  full = VERSION.full;
+  minor = VERSION.minor;
+  patch = VERSION.patch;
 
   constructor(private title: Title) {
     title.setTitle('Info');

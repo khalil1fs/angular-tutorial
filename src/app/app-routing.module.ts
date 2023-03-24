@@ -6,6 +6,7 @@ import {ParentComponent} from "./data/parent-child/parent/parent.component";
 import { ParentComponent as ParentComponentReverse} from './data/child-parent/parent/parent.component';
 import {ShowPopupComponent} from "./popup/show-popup.component";
 import {InfoComponent} from "./info/info.component";
+import {ShowI18nComponent} from "./show-i18n/show-i18n.component";
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'lazy', component: ImgLazyComponent},
   {path: 'pop-up', component: ShowPopupComponent},
   {path: 'info', component: InfoComponent},
+  {path: 'i18n', component: ShowI18nComponent},
   {
     path: 'data', children: [
       {path: 'parent-child', component: ParentComponent},

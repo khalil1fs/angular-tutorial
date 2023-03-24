@@ -18,6 +18,7 @@ import { ShowPopupComponent } from './popup/show-popup.component';
 import { InfoComponent } from './info/info.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ShowI18nComponent } from './show-i18n/show-i18n.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { environment } from '../environments/environment';
     ChildComponentReverse,
     PopupComponent,
     ShowPopupComponent,
-    InfoComponent
+    InfoComponent,
+    ShowI18nComponent
   ],
   imports: [
     BrowserModule,
